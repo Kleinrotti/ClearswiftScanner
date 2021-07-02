@@ -93,8 +93,6 @@ urls.addEventListener("click", async () => {
 
 //start the url scan
 startScan.addEventListener("click", async () => {
-  urls.disabled = true;
-  startScan.disabled = true;
   //disable delete buttons
   document.querySelectorAll('button.deleteBtn').forEach(elem => {
     elem.disabled = true;

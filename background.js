@@ -175,7 +175,7 @@ chrome.runtime.onMessage.addListener(
     if (request.action == "getScanState") {
       var state;
       chrome.storage.local.get(['scanResult'], function (result) {
-        if (result.scanResult == null) {
+        if (result.scanResult == null && currentLength == 0) {
           state = "none";
         }
         //scan is finished
