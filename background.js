@@ -36,6 +36,7 @@ chrome.runtime.onMessage.addListener(
           if (data.error) {
             console.log(data.error);
             dict.error = data.error.message;
+            count++;
             sendResponse({ result: dict });
           }
           else {
@@ -58,6 +59,7 @@ chrome.runtime.onMessage.addListener(
         .catch((error) => {
           dict.error = error;
           console.error('Error:', error);
+          count++;
           sendResponse({ result: dict });
         })
       return true;  // Will respond asynchronously.
